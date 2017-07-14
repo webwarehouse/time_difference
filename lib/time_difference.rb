@@ -84,7 +84,7 @@ class TimeDifference
     if diff_parts.empty?
       return last_part
     else
-      return [diff_parts.join(', '), last_part].join(' and ')
+      return [diff_parts.join(', '), last_part].join(' и ')
     end
   end
 
