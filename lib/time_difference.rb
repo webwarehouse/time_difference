@@ -69,10 +69,12 @@ class TimeDifference
     diff_parts = []
     in_general.each do |part,quantity|
       next if quantity <= 0
-      part = part.to_s.humanize
+      part = part.to_s.humanize.singularize
 
       if quantity <= 1
-        part = RUSSIAN_HUMANIZE_COMPONENTS[part.singularize]
+        part = RUSSIAN_HUMANIZE_COMPONENTS[part]
+      else
+        part = RUSSIAN_HUMANIZE_COMPONENTS[part]
       end
 
       diff_parts << "#{quantity} #{part}"
